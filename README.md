@@ -1,6 +1,6 @@
 #### Complete App
 
-[Jobify](https://jobify.live/)
+[Job Profile](https://jobify.live/)
 
 #### Create React APP
 
