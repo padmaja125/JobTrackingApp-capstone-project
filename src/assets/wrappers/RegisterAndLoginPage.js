@@ -1,5 +1,5 @@
-import styled from 'styled-components';
-
+import styled from "styled-components";
+//logo, form, h4, p, btn, member-btn
 const Wrapper = styled.section`
   min-height: 100vh;
   display: grid;
