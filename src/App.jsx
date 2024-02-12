@@ -6,6 +6,13 @@ import {
   DashboardLayout,
   Error,
   Register,
+  AllJobs,
+  EditJob,
+  Stats,
+  DeleteJob,
+  AddJob,
+  Admin,
+  Profile,
 } from "./pages";
 const router = createBrowserRouter([
   {
@@ -28,6 +35,28 @@ const router = createBrowserRouter([
       {
         path: "dashboard",
         element: <DashboardLayout />,
+        children: [
+          {
+            index: true,
+            element: <Admin />,
+          },
+          {
+            path: "stats",
+            element: <Stats />,
+          },
+          {
+            path: "All-Jobs",
+            element: <AllJobs />,
+          },
+          {
+            path: "profile",
+            element: <Profile />,
+          },
+          {
+            path: "Add-Job",
+            element: <AddJob />,
+          },
+        ],
       },
     ],
   },
