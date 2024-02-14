@@ -2,7 +2,7 @@ import { Outlet } from "react-router-dom";
 import Wrapper from "../assets/wrappers/Dashboard";
 import { BigSidebar, SmallSidebar, Navbar } from "../components";
 import { createContext, useContext, useState } from "react";
-
+import { checkDefaultTheme } from "../App";
 //create global context to send props to the child components
 
 const DashboardContext = createContext();
@@ -11,12 +11,14 @@ const DashboardLayout = () => {
   //temp variables or placeholders
   const user = { name: "john" };
   const [showSidebar, setShowSidebar] = useState(false);
-  const [isDarkTheme, setIsDarkTheme] = useState(false);
+  const [isDarkTheme, setIsDarkTheme] = useState(checkDefaultTheme);
 
   // arrow function to toggle btwn dark and white
   const toggleDarkTheme = () => {
-    console.log("toggle dark theme");
-    setIsDarkTheme(!isDarkTheme);
+    const newDarkTheme = !isDarkTheme;
+    setIsDarkTheme(newDarkTheme);
+    document.body.classList.toggle("dark-theme", newDarkTheme);
+    localStorage.setItem("darkTheme", newDarkTheme);
   };
 
   //arrow function to toggle small and big sidebar
